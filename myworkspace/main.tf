@@ -1,3 +1,4 @@
+# main.tf
 terraform {
   required_providers {
     docker = {
@@ -21,6 +22,7 @@ resource "docker_container" "nginx" {
   # name  = "tutorial"
   name = var.container_name
   ports {
+    # internal and external are now defined by variables
     internal = var.internal_port
     external = var.external_port
   }
